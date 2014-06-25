@@ -1,0 +1,28 @@
+<h1>Add New Restaurant</h1>
+<%= form_for @restaurant do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
+  </div>
+  <div>
+    <%= f.label :max_occupancy %>
+    <%= f.text_field :max_occupancy %>
+  </div>
+  <div>
+    <%= f.label :average_price %>
+    <%= f.text_field :average_price %>
+  </div>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div>
+    <%= f.submit "Create Restaurant Profile" %>
+  </div>
+
+
+<% end %>
