@@ -1,5 +1,5 @@
 <% @restaurants.each do |r| %>
-  <p><%= r.name %></p>
+  <p><%= link_to r.name, restaurant_path(r) %></p>
   <p><%= r.cuisine %></p>
   <p><%= r.average_price %></p>
   <p><%= r.location %></p>
