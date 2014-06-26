@@ -1,9 +1,9 @@
-<h1> Reservations</h1>
+<h1>Reservations</h1>
 
 <% @reservations.each do |r| %>
   <p><%= r.restaurant.name %></p>
   <p><%= r.date %></p>
   <p><%= r.time %></p>
   <p><%= r.party_size %></p>
-  <p><%= link_to restaurant_reservation_path(r.restaurant_id) %></p>
+  <p><%= link_to "Show", restaurant_reservation_path(r.restaurant.id, r.id)%></p>
 <% end %>
