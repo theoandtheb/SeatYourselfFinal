@@ -5,3 +5,18 @@
 <h2>Max occupancy<%= @restaurant.max_occupancy %></h2>
 <%= link_to "Edit", edit_restaurant_path %><br>
 <%= link_to "Delete", restaurant_path, :method => :delete %>
+
+<%= form_for @reservations do |f| %>
+  <div>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+  </div>
+  <div>
+    <%= f.label :party_size %>
+    <%= f.text_field :party_size %>
+  </div>
+<% end %>

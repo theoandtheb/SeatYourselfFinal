@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
-  resources :restaurants
+  resources :restaurants do
+    :reservations
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
