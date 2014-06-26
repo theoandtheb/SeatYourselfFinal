@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :users
   resources :restaurants
 
