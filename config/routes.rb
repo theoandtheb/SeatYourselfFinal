@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
-  resources :restaurants do
-    :reservations
+  resources :restaurants, :users do
+    resources :reservations
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

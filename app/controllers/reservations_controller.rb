@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :load_product
+  before_action :load_restaurant
 
   def create
     @reservation = @restaurant.reservations.build(reservations_params)
@@ -28,8 +28,9 @@ class ReservationsController < ApplicationController
   end
 
 private
-  def load_product
-    @product = Product.find(params[:product_id]) #why does the params store this?
+  def load_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+   # why does the params store this?
   end
 
   def reservations_params

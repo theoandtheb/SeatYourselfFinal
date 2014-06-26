@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to user_path(@user), :notice => "User created"
+      redirect_to root_path, :notice => "Welcome to Seat Yourself, #{@user.name}"
     else
       render 'new'
     end

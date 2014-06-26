@@ -6,17 +6,26 @@
 <%= link_to "Edit", edit_restaurant_path %><br>
 <%= link_to "Delete", restaurant_path, :method => :delete %>
 
-<%= form_for @reservations do |f| %>
-  <div>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-  </div>
-  <div>
-    <%= f.label :time %>
-    <%= f.time_field :time %>
-  </div>
-  <div>
-    <%= f.label :party_size %>
-    <%= f.text_field :party_size %>
-  </div>
+
+<% if current_user %>
+  <%= form_for([@restaurant, @reservation]) do |f| %>
+    <div>
+      <%= f.label :date %>
+      <%= f.date_field :date %>
+    </div>
+    <div>
+      <%= f.label :time %>
+      <%= f.time_field :time %>
+    </div>
+    <div>
+      <%= f.label :party_size %>
+      <%= f.text_field :party_size %>
+    </div>
+    <div>
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+
+  <% else %>
+    <p><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %> to reserve</p>
 <% end %>
