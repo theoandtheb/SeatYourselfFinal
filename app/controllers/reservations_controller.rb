@@ -1,6 +1,11 @@
 class ReservationsController < ApplicationController
 
-  before_action :load_restaurant
+  before_action :load_restaurant, :except => [:index, :show, :edit]
+
+  def index
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservations = @restaurant.reservations
+  end
 
   def create
     @reservation = @restaurant.reservations.build(reservations_params)
@@ -13,18 +18,30 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.find(params[:id])
   end
 
   def update
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.find(params[:id])
+
+    if @reservation.update_attributes(reservations_params)
+      redirect_to restaurant_reservation_path(@restaurant, @reservation)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation = @restaurant.reservations.find(params[:id])
   end
 
 private

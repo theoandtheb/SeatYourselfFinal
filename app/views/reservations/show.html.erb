@@ -1,2 +1,5 @@
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
+<h1><%= @reservation.restaurant.name %></h1>
+<h2><%= @reservation.date %></h2>
+<h2><%= @reservation.time %></h2>
+<h2><%= @reservation.party_size %></h2>
+<p><%= link_to "Edit", edit_restaurant_reservation_path(@restaurant, @reservation) %></p>

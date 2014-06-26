@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
 
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :users
-  resources :restaurants, :users do
+  resources :users do
+    get "reservations"
+  end
+
+  resources :restaurants do
     resources :reservations
   end
 

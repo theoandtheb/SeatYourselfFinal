@@ -41,6 +41,11 @@ class UsersController < ApplicationController
     redirect_to restaurants_path, :notice => "#{@user.name} was deleted."
   end
 
+  def reservations
+    @reservations = Reservation.all
+    @user = current_user
+  end
+
 private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_digest)
