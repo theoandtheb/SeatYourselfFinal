@@ -1,0 +1,51 @@
+ReST = representational state transfer
+
+The world wide web (HTTP) is not the internet
+- an FTP is it's own protocol on the internet
+- email - SMTP is a different protocol
+
+HTTP has two parts:
+- request - interact with an online resource
+- response - returns a representation of the resource; returns the result of the interaction with a resource
+
+Nouns and verbs
+- the resources you can interact with = nouns
+= the actions you can perform on a resource = verbs
+
+  Nouns are how we reference and locate resources
+  -URI
+  -- name given to a resource
+  -URL
+  -- name and location of a resource
+  -- all uRLs are URIs, but not the other way around
+
+  Verbs
+  Create a resource on the server - POST
+  Read - GET (shouldn't change anything on the server side)
+  Update - PUT/PATCH
+    - PUT means here are some inputs, and i want to replace your version of this resource with what i'm giving you (changing everything)
+    - PATCH is here are some of the fields, so go patch up the info with what you have
+  Delete - DESTROY
+
+What is a resource?
+- a concept or a thing (a product, user, comment, shipment, shipment line item)
+- it is also something that can be interact with and manipulated (CRUDed)
+
+The response is usually composed of two parts (status code + representation of the resource)
+  - the "representation" is given by the (.:format) in the routes when you rake routes
+
+Problems with REST
+  - browsers do not fully implement all the verbs - delete and put/patch
+  - rails tends to use a hidden field that declares / adds the ability to use delete put/patch
+
+- when dealing with rails, you want to use objects more than values.
+	- you don’t need need to write app.restaurant_path(r) as opposed to (r.id) because rails automatically finds the ID
+
+
+
+
+
+BLOG bc it gets your personal story out
+- change github read me (write about what it is, bit maker learning goals, etc.)
+
+use twitter as gateway to company culture
