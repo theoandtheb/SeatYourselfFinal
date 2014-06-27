@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
 
   before_action :load_restaurant, :except => [:index, :show, :edit]
+  before_action :ensure_logged_in, :except => [:load_restaurant, :reservations_params]
 
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])

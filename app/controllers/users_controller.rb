@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :ensure_logged_in, :except => [:new, :create]
+  # before_action :ensure_appropriate_user, :only => :reservations
+
   def index
     @users = User.all
   end
@@ -42,8 +45,8 @@ class UsersController < ApplicationController
   end
 
   def reservations
-    @reservations = Reservation.all
-    @user = current_user
+    user = User.find(params[:user_id])
+    @reservations = user.reservations.all
   end
 
 private

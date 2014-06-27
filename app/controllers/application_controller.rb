@@ -8,4 +8,18 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def ensure_logged_in
+    unless current_user
+      flash[:alert] = "Please log in"
+      redirect_to new_session_path
+    end
+  end
+
+  # def ensure_appropriate_user
+  #   unless current_user.id == params[:id]
+  #     flash[:alert] = "You do not have access to this information"
+  #     redirect_to root_path
+  #   end
+  # end
 end
