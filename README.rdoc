@@ -4,7 +4,7 @@ Bitmaker Labs assignment: "SeatYourself" was the third Rails practical in the co
 
 Concepts reinforced in the development of SeatYourself were:
 
-* Professional Rails application planning (user stories, planning, mockups, modelling, usability)
+* Professional Rails application planning (user stories, mockups, modelling, usability)
 
 * Debugging strategies
 
