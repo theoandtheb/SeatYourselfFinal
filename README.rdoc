@@ -1,6 +1,6 @@
 == SeatYourself - OpenTable Clone
 
-Bitmaker Labs assignment: "SeatYourself" was the third Rails practical in the course, the first of which was completely tutorial-free.
+Bitmaker Labs assignment: "SeatYourself" was the third Rails practical in the course, and the first which was completely tutorial-free.
 
 Concepts reinforced in the development of SeatYourself were:
 
