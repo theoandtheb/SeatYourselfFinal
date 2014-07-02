@@ -1,5 +1,5 @@
 <h1><%= @reservation.restaurant.name %></h1>
-<h2><%= @reservation.date %></h2>
-<h2><%= @reservation.time %></h2>
+<h2><%= @reservation.date.strftime("%A %B #{@reservation.date.day.ordinalize}") %></h2>
+<h2><%= @reservation.time.strftime("%-1I:%M %p") %></h2>
 <h2><%= @reservation.party_size %></h2>
 <p><%= link_to "Edit", edit_restaurant_reservation_path(@restaurant, @reservation) %></p>

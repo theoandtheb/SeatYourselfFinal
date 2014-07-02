@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+.restaurants {
+	display: inline-block;
+	margin-right: 2%;
+	width: auto;
+}

@@ -1,6 +1,19 @@
 <h1>Seat Yourself</h1>
 <h2>An OpenTable Clone</h2>
 <p><%= link_to "new user", new_user_path %></p>
-<p><%= link_to "all users", users_path %></p>
+<% if @current_user %>
+<p><%= link_to "your active reservations", user_reservations_path(:id) %></p>
+<% end %>
 <p><%= link_to "restaurants", restaurants_path %></p>
 <p><%= link_to "new restaurant", new_restaurant_path %></p>
+<br><br>
+<h2>Participating Restaurants</h2>
+<% @restaurants.each do |r| %>
+  <div class="restaurants">
+  <p><%= link_to r.name, restaurant_path(r) %></p>
+  <p><%= r.cuisine %></p>
+  <p><%= r.average_price %></p>
+  <p><%= r.location %></p>
+  <br><br>
+</div>
+<% end %>

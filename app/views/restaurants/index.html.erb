@@ -1,5 +1,7 @@
 <% @restaurants.each do |r| %>
-  <p><%= link_to r.name, restaurant_path(r) %></p>
+  <h3><%= r.name %></h3>
+  <p><%= link_to 'To Book Your Reservation, Click Here', restaurant_path(r) %></p>
+  <p><%= r.description %></p>
   <p><%= r.cuisine %></p>
   <p><%= r.average_price %></p>
   <p><%= r.location %></p>

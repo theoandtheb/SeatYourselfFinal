@@ -1,9 +1,11 @@
 <h1>Reservations</h1>
 
 <% @reservations.each do |r| %>
-  <p><%= r.restaurant.name %></p>
-  <p><%= r.date %></p>
-  <p><%= r.time %></p>
+	<% @n = r.restaurant_id %>
+	<% @k = Restaurant.find(@n) %>
+  <p><%= @k.name %></p>
+  <p><%= r.date.strftime("%A %B #{r.date.day.ordinalize}") %></p>
+  <p><%= r.time.strftime("%-1I:%M %p") %></p>
   <p><%= r.party_size %></p>
-  <p><%= link_to "Show", restaurant_reservation_path(r.restaurant.id, r.id)%></p>
+  <p><%= link_to "Show", restaurant_reservation_path(r.restaurant_id, r.id)%></p>
 <% end %>

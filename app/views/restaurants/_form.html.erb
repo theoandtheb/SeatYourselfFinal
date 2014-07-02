@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= f.label :cuisine %>
-    <%= f.text_field :cuisine %>
+    <%= f.select :cuisine, options_for_select(%w[American Italian Indian Chinese Tapas]) %>
   </div>
   <div>
     <%= f.label :description %>
@@ -30,7 +30,7 @@
   </div>
   <div>
     <%= f.label :average_price %>
-    <%= f.text_field :average_price %>
+    <%= f.select :average_price, options_for_select(["Cheap", "Below Average", "Above Average", "Expensive" ]) %>
   </div>
   <div>
     <%= f.label :location %>
